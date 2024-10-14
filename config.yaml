@@ -1,0 +1,13 @@
+csv_path: ./data/customers.csv
+
+fields:
+  - customer_id
+  - first_name
+  - last_name
+  - phone
+  - email
+  - city
+  - state
+
+filters:
+  state: NY
