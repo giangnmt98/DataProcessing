@@ -6,13 +6,13 @@ SHELL := /bin/bash
 PYTHON_EXEC := python3
 
 # Virtual environment directory
-VENV_DIR := $(PACKAGE_NAME)_env
+VENV_DIR := dataprocessor_env
 
 # Directory for storing processed data
-CODE_DIRECTORY := $(PACKAGE_NAME)
+CODE_DIRECTORY := dataprocessor
 
 # Directory containing tests
-TEST_DIRECTORY := $(PACKAGE_NAME)/tests
+TEST_DIRECTORY := dataprocessor/tests
 
 # Virtual environment setup
 venv:

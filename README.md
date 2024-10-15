@@ -52,22 +52,32 @@ make style
 
 ## Project Directory Structure
 
+### Folder and File Descriptions```
 ```
 TemplatePackage/
+├── dataprocessor/
+│   ├── __init__.py
+│   ├── module1.py
+│   ├── module2.py
+│   └── ...
+├── dataprocessor_env/
+├── tests/
+│   ├── __init__.py
+│   ├── test_module1.py
+│   ├── test_module2.py
+│   └── ...
 ├── .github/
 │   └── workflows/
 │       └── project_ci.yaml
-├── csvreader/
 ├── Makefile
 ├── README.md
 └── setup.py
 ```
 
 ### Folder and File Descriptions
-
-- **.github/workflows/**: Contains GitHub Actions workflow files for CI/CD.
-- **csvreader/**: Directory containing the main source code for the project.
-- **csvreader/tests/**: Directory containing test cases for the project.
-- **Makefile**: File containing make commands for setting up the environment, running tests, and styling the code.
-- **README.md**: This file, providing an overview and instructions for the project.
-- **pyproject.toml**: Script for setting up the package and its dependencies.
+- `dataprocessor/`: Contains the main code modules.
+- `dataprocessor/tests/`: Contains test modules.
+- `.github/workflows/`: Contains GitHub Actions workflow files.
+- `Makefile`: Makefile for setting up the environment, styling, and testing.
+- `README.md`: Project documentation.
+- `setup.py`: Python package setup file.

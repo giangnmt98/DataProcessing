@@ -19,6 +19,8 @@ if [ -z "$PACKAGE_NAME" ]; then
 fi
 
 # Export package name
-export PACKAGE_NAME=${PACKAGE_NAME}
-make venv PACKAGE_NAME=${PACKAGE_NAME}
-source ${PACKAGE_NAME}_env/bin/activate && python3 ${PACKAGE_NAME}/main.py
+python3 -m venv ${PACKAGE_NAME}_env && \
+source ${PACKAGE_NAME}_env/bin/activate && \
+python3 -m pip install --upgrade pip setuptools wheel && \
+python3 -m pip install -e . && \
+python3 ${PACKAGE_NAME}/main.py
