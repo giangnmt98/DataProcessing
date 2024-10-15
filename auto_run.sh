@@ -18,6 +18,7 @@ if [ -z "$PACKAGE_NAME" ]; then
     exit 1
 fi
 
+
 # Export package name
 python3 -m venv ${PACKAGE_NAME}_env && \
 source ${PACKAGE_NAME}_env/bin/activate && \
