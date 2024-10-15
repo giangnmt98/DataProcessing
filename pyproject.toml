@@ -3,9 +3,9 @@ requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "csvreader"
-version = "0.1"
-description = "CSV Reader Package"
+name = "dataprocessor"
+version = "1.0"
+description = "Data Processor Package"
 readme = "README.md"
 license = { file = "LICENSE" }
 authors = [
@@ -31,4 +31,4 @@ dev = [
 ]
 
 [tool.setuptools]
-packages = ["csvreader"]
+packages = ["dataprocessor"]

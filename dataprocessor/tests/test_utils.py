@@ -3,7 +3,7 @@ This module contains a test function to validate configuration using
 `validate_config` function from the `csvreader.utils` module.
 """
 
-from csvreader.utils import validate_config
+from dataprocessor.utils.utils import validate_config
 
 
 def test_validate_config():

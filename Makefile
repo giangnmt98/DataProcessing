@@ -6,13 +6,13 @@ SHELL := /bin/bash
 PYTHON_EXEC := python3
 
 # Virtual environment directory
-VENV_DIR := csvreader_venv
+VENV_DIR := $(PACKAGE_NAME)_env
 
 # Directory for storing processed data
-CODE_DIRECTORY := csvreader
+CODE_DIRECTORY := $(PACKAGE_NAME)
 
 # Directory containing tests
-TEST_DIRECTORY := csvreader/tests
+TEST_DIRECTORY := $(PACKAGE_NAME)/tests
 
 # Virtual environment setup
 venv:

@@ -88,7 +88,7 @@ jobs:
 
       - name: Lint with flake8, mypy and pylint
         env:
-          CODE_DIRECTORY: ./csvreader/
+          CODE_DIRECTORY: ./dataprocessor/
         run: |
           flake8 $CODE_DIRECTORY
           mypy --show-traceback $CODE_DIRECTORY
@@ -96,4 +96,4 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest -s --durations=0 --disable-warnings tests/
+          pytest -s --durations=0 --disable-warnings CODE_DIRECTORY/tests/

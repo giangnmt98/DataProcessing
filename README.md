@@ -1,5 +1,5 @@
 
-# MyTV Recommendation System Airflow Project
+# Template Package Project
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@
 
 ## Introduction
 
-This project implements an Airflow-based ETL pipeline for the MyTV Recommendation System. The business logic is decoupled from the Airflow DAGs, promoting easier testing and maintenance.
+This project is template package.
 
 ## Installation
 
@@ -26,16 +26,16 @@ This project implements an Airflow-based ETL pipeline for the MyTV Recommendatio
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/data-science-general-1/vnpt_ic_mytv_airflow.git
-   cd vnpt_ic_mytv_airflow
-   ```
+```bash
+git clone https://github.com/xxxxxxx
+cd TemplatePackage
+```
 
 2. Install the required dependencies:
 
-   ```bash
-   make venv
-   ```
+```bash
+make venv
+```
 
 ### Run Tests
 ```bash
@@ -50,10 +50,24 @@ make style
 ## Usage
 
 
-
 ## Project Directory Structure
 
 ```
+TemplatePackage/
+├── .github/
+│   └── workflows/
+│       └── project_ci.yaml
+├── csvreader/
+├── Makefile
+├── README.md
+└── setup.py
 ```
 
 ### Folder and File Descriptions
+
+- **.github/workflows/**: Contains GitHub Actions workflow files for CI/CD.
+- **csvreader/**: Directory containing the main source code for the project.
+- **csvreader/tests/**: Directory containing test cases for the project.
+- **Makefile**: File containing make commands for setting up the environment, running tests, and styling the code.
+- **README.md**: This file, providing an overview and instructions for the project.
+- **pyproject.toml**: Script for setting up the package and its dependencies.

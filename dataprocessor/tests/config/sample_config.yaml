@@ -1,0 +1,13 @@
+input_data_path: dataprocessor/tests/data/sample_data.csv
+output_data_path: dataprocessor/tests/data/sample_data_output.csv
+fields:
+  - customer_id: int
+  - first_name: str
+  - last_name: str
+  - phone: str
+  - email: str
+  - city: str
+  - state: str
+
+filters:
+  state: NY

@@ -4,7 +4,7 @@
 MAX_LINES=500
 MAX_CHANGE_LINES=200
 PYTHON_EXEC=python3
-CODE_DIRECTORY=csvreader
+CODE_DIRECTORY=dataprocessor
 
 # Functions
 echo_error() {
@@ -37,7 +37,7 @@ echo ""
 # File line count check
 check_file_line_count() {
   for file in $(git ls-files); do
-    if [[ "$file" != *".pylintrc"* ]] && [[ "$file" != *"airflow.cfg"* ]]; then
+    if [[ "$file" != *".pylintrc"* ]]; then
       line_count=$(wc -l < "$file")
       if [ "$line_count" -gt "$MAX_LINES" ]; then
         echo_error "File $file has $line_count lines, which exceeds the threshold of $MAX_LINES lines."
