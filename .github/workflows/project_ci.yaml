@@ -87,9 +87,11 @@ jobs:
           python3 -m pip install -e ".[dev]"
 
       - name: Lint with flake8, mypy and pylint
+        env:
+          CODE_DIRECTORY: ./dataprocessor/
         run: |
           flake8 $CODE_DIRECTORY
-          mypy --show-traceback ./dataprocessor/
+          mypy --show-traceback $CODE_DIRECTORY
           pylint $CODE_DIRECTORY
 
       - name: Run tests

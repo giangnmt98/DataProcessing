@@ -13,7 +13,10 @@ authors = [
 ]
 dependencies = [
     # Add other dependencies from requirements.txt
-    "pandas==2.2.2"
+    "pandas==2.2.2",
+    "types-PyYAML==6.0.12.12",
+    "PyYAML==6.0",
+    "colorlog==6.8.2"
 ]
 
 [project.optional-dependencies]
