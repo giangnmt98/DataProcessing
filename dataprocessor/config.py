@@ -5,7 +5,7 @@ configuration files in YAML format.
 
 import yaml
 
-from .utils import validate_config
+from dataprocessor.utils.utils import validate_config
 
 
 class Config:

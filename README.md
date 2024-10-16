@@ -1,5 +1,5 @@
 
-# MyTV Recommendation System Airflow Project
+# Template Package Project
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@
 
 ## Introduction
 
-This project implements an Airflow-based ETL pipeline for the MyTV Recommendation System. The business logic is decoupled from the Airflow DAGs, promoting easier testing and maintenance.
+This project is template package.
 
 ## Installation
 
@@ -26,16 +26,16 @@ This project implements an Airflow-based ETL pipeline for the MyTV Recommendatio
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/data-science-general-1/vnpt_ic_mytv_airflow.git
-   cd vnpt_ic_mytv_airflow
-   ```
+```bash
+git clone https://github.com/xxxxxxx
+cd TemplatePackage
+```
 
 2. Install the required dependencies:
 
-   ```bash
-   make venv
-   ```
+```bash
+make venv
+```
 
 ### Run Tests
 ```bash
@@ -50,10 +50,34 @@ make style
 ## Usage
 
 
-
 ## Project Directory Structure
 
+### Folder and File Descriptions```
 ```
+TemplatePackage/
+├── dataprocessor/
+│   ├── __init__.py
+│   ├── module1.py
+│   ├── module2.py
+│   └── ...
+├── dataprocessor_env/
+├── tests/
+│   ├── __init__.py
+│   ├── test_module1.py
+│   ├── test_module2.py
+│   └── ...
+├── .github/
+│   └── workflows/
+│       └── project_ci.yaml
+├── Makefile
+├── README.md
+└── setup.py
 ```
 
 ### Folder and File Descriptions
+- `dataprocessor/`: Contains the main code modules.
+- `dataprocessor/tests/`: Contains test modules.
+- `.github/workflows/`: Contains GitHub Actions workflow files.
+- `Makefile`: Makefile for setting up the environment, styling, and testing.
+- `README.md`: Project documentation.
+- `setup.py`: Python package setup file.
