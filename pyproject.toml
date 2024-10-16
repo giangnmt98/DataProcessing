@@ -13,7 +13,11 @@ authors = [
 ]
 dependencies = [
     # Add other dependencies from requirements.txt
-    "pandas==2.2.2"
+    "pandas==2.2.2",
+    "cudf-cu12==24.8.*",
+    "types-PyYAML==6.0.12.12",
+    "PyYAML==6.0",
+    "colorlog==6.8.2"
 ]
 
 [project.optional-dependencies]
@@ -29,6 +33,11 @@ dev = [
     "colorlog==6.8.2"
     # Add other dev dependencies here
 ]
+
+[[tool.poetry.source]]
+name = "nvidia"
+url = "https://pypi.nvidia.com"
+default = false
 
 [tool.setuptools]
 packages = ["dataprocessor"]

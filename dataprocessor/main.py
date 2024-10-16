@@ -16,7 +16,8 @@ DEFAULT_CONFIG_PATH = "config.yaml"
 def load_and_validate_config(config_path: str) -> Config:
     """
     Load and validate the configuration file.
-    Parameters:
+
+    Args:
         config_path (str): The filesystem path to the configuration file.
     Returns:
         Config: A validated Config object.
@@ -32,21 +33,23 @@ def load_and_validate_config(config_path: str) -> Config:
 def handle_csv_data(processor: DataProcessor) -> None:
     """
     Process and filter CSV data using the provided DataProcessor.
-    Parameters:
+
+    Args:
         processor (DataProcessor): An instance of DataProcessor used to
                                    read, filter, and write data.
     """
     data = processor.read_data()
     filtered_data = processor.filter_data(data)
     processor.write_data(filtered_data)
-    logger.info(filtered_data)
+    logger.info("\n%s", str(filtered_data))
     logger.info("Data processing complete.")
 
 
 def main(config_path: str = DEFAULT_CONFIG_PATH) -> None:
     """
     Main function to orchestrate the processing of CSV data.
-    Parameters:
+
+    Args:
         config_path (str): Filesystem path to the configuration file.
     """
     config = load_and_validate_config(config_path)
@@ -59,7 +62,7 @@ if __name__ == "__main__":
         description="Process CSV data based on a given configuration."
     )
     parser.add_argument(
-        "config_path",
+        "--config_path",
         type=str,
         nargs="?",
         default=DEFAULT_CONFIG_PATH,

@@ -1,8 +1,8 @@
 """
-Module to process CSV data, including reading, filtering, and writing data.
+Module to process CSV data, including reading, filtering, and writing data using CuDF.
 """
 
-import pandas as pd
+import cudf
 
 from dataprocessor.config import Config
 from dataprocessor.utils.customlogger import CustomLogger
@@ -27,12 +27,12 @@ class DataProcessor:
         """
         self.config = config.config
 
-    def read_data(self) -> pd.DataFrame:
+    def read_data(self):
         """
         Reads data from a CSV file based on configuration settings.
 
         Returns:
-            pd.DataFrame: The data read from the CSV file.
+            DataFrame: The data read from the CSV file.
 
         Raises:
             ValueError: If the data cannot be read from the CSV file.
@@ -57,25 +57,23 @@ class DataProcessor:
         return self.load_csv(csv_path, field_names, field_types)
 
     @staticmethod
-    def convert_data_types(df: pd.DataFrame, field_types: dict) -> pd.DataFrame:
+    def convert_data_types(df, field_types: dict):
         """
         Converts the data types of DataFrame columns.
 
         Parameters:
-            df (pd.DataFrame): The DataFrame whose column types need to be converted.
+            df (DataFrame): The DataFrame whose column types need to be converted.
             field_types (dict): A dictionary mapping field names to data types.
 
         Returns:
-            pd.DataFrame: The DataFrame with updated data types.
+            DataFrame: The DataFrame with updated data types.
         """
         for field, dtype in field_types.items():
             # Convert the data type of the specified field
             df[field] = df[field].astype(dtype)
         return df
 
-    def load_csv(
-        self, csv_path: str, field_names: list, field_types: dict
-    ) -> pd.DataFrame:
+    def load_csv(self, csv_path: str, field_names: list, field_types: dict):
         """
         Loads data from a CSV file and converts column data types.
 
@@ -85,27 +83,27 @@ class DataProcessor:
             field_types (dict): Dictionary mapping field names to data types.
 
         Returns:
-            pd.DataFrame: The loaded and type-converted data.
+            DataFrame: The loaded and type-converted data.
 
         Raises:
             ValueError: If an error occurs reading the CSV file.
         """
         try:
             # Read the CSV file into a DataFrame
-            df = pd.read_csv(csv_path, usecols=field_names)
+            df = cudf.read_csv(csv_path, usecols=field_names)
             return self.convert_data_types(df, field_types)
-        except pd.errors.EmptyDataError as e:
+        except FileNotFoundError as e:
             raise ValueError(f"Error reading CSV file: {e}") from e
 
-    def filter_data(self, df: pd.DataFrame) -> pd.DataFrame:
+    def filter_data(self, df):
         """
         Filters the DataFrame based on specified criteria in the configuration.
 
         Parameters:
-            df (pd.DataFrame): The DataFrame to be filtered.
+            df (DataFrame): The DataFrame to be filtered.
 
         Returns:
-            pd.DataFrame: The filtered DataFrame.
+            DataFrame: The filtered DataFrame.
         """
         logger.info("Filtering data based on criteria.")
 
@@ -117,12 +115,12 @@ class DataProcessor:
             df = df[df[key] == value]
         return df
 
-    def write_data(self, data: pd.DataFrame) -> None:
+    def write_data(self, data) -> None:
         """
         Writes the data to a CSV file specified in the configuration.
 
         Parameters:
-            data (pd.DataFrame): The DataFrame to be written to a CSV file.
+            data (DataFrame): The DataFrame to be written to a CSV file.
 
         Raises:
             ValueError: If the output CSV path is not provided

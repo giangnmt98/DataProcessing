@@ -51,7 +51,7 @@ class TestPreprocessing:
         # Create a DataFrame from the sample data
         df = pd.DataFrame(data)
         # Read data using the preprocessing object
-        result_df = self.preprocessing.read_data()
+        result_df = self.preprocessing.read_data().toPandas()
         # Assert that the resulting DataFrame matches the expected DataFrame
         assert_frame_equal(df, result_df)
 
@@ -81,7 +81,7 @@ class TestPreprocessing:
         raw_df = self.preprocessing.read_data()
 
         # Apply filters to the raw DataFrame
-        filtered_df = self.preprocessing.filter_data(raw_df)
+        filtered_df = self.preprocessing.filter_data(raw_df).toPandas()
 
         # Assert that the filtered DataFrame matches the expected DataFrame
         assert_frame_equal(filtered_df, expected_df)

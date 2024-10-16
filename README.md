@@ -27,7 +27,7 @@ This project is template package.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/xxxxxxx
+https://github.com/giangnmt98/TemplatePackage
 cd TemplatePackage
 ```
 
@@ -48,8 +48,15 @@ make style
 ```
 
 ## Usage
-
-
+### Run the data processor
+```bash
+python3 dataprocessor.main.py --config_path <path_to_config_file>
+````
+### Auto create virtual environment and run the data processor
+```bash
+chmod +x auto_run.sh
+./auto_run.sh --package_name dataprocessor --config_path <path_to_config_file>
+````
 ## Project Directory Structure
 
 ### Folder and File Descriptions```
