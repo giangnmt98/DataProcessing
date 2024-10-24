@@ -26,6 +26,8 @@ class DataProcessor:
             config (Config): An instance of Config containing configuration settings.
         """
         self.config = config.config
+        self.logger = CustomLogger(name="Data Processing", debug=self.config.get("debug", False)).get_logger()
+
 
     def read_data(self) -> pd.DataFrame:
         """
@@ -37,7 +39,7 @@ class DataProcessor:
         Raises:
             ValueError: If the data cannot be read from the CSV file.
         """
-        logger.info("Reading data from CSV file.")
+        self.logger.info("Reading data from CSV file.")
 
         # Get the path to the CSV file from the configuration
         csv_path = self.config.get("input_data_path", "")
@@ -107,7 +109,7 @@ class DataProcessor:
         Returns:
             pd.DataFrame: The filtered DataFrame.
         """
-        logger.info("Filtering data based on criteria.")
+        self.logger.info("Filtering data based on criteria.")
 
         # Get the filter criteria from the configuration
         filter_criteria = self.config.get("filters", {})
@@ -128,7 +130,7 @@ class DataProcessor:
             ValueError: If the output CSV path is not provided
             or an error occurs writing the file.
         """
-        logger.info("Writing data to CSV file.")
+        self.logger.info("Writing data to CSV file.")
 
         # Get the output CSV path from the configuration
         output_csv_path = self.config.get("output_data_path")
