@@ -7,7 +7,7 @@ import argparse
 from config import Config
 from processor import DataProcessor
 
-from dataprocessor.utils.customlogger import CustomLogger
+from dataprocessor.utils.custom_logger import CustomLogger
 
 logger = CustomLogger(name="Data Processor").get_logger()
 DEFAULT_CONFIG_PATH = "config.yaml"
