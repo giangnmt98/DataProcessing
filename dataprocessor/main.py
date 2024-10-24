@@ -9,7 +9,6 @@ from processor import DataProcessor
 
 from dataprocessor.utils.custom_logger import CustomLogger
 
-
 logger = CustomLogger(name="Main").get_logger()
 
 DEFAULT_CONFIG_PATH = "config.yaml"

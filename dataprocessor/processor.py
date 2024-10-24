@@ -7,8 +7,6 @@ import pandas as pd
 from dataprocessor.config import Config
 from dataprocessor.utils.custom_logger import CustomLogger
 
-logger = CustomLogger(name="Data Processor").get_logger()
-
 
 class DataProcessor:
     """
@@ -26,8 +24,9 @@ class DataProcessor:
             config (Config): An instance of Config containing configuration settings.
         """
         self.config = config.config
-        self.logger = CustomLogger(name="Data Processing", debug=self.config.get("debug", False)).get_logger()
-
+        self.logger = CustomLogger(
+            name="Data Processing", debug=self.config.get("debug", False)
+        ).get_logger()
 
     def read_data(self) -> pd.DataFrame:
         """
