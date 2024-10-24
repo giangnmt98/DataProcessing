@@ -1,5 +1,5 @@
 
-# Template Package Project
+# Data Processing Package Project
 
 ## Table of Contents
 
@@ -27,8 +27,8 @@ This project is template package.
 1. Clone the repository:
 
 ```bash
-https://github.com/giangnmt98/TemplatePackage
-cd TemplatePackage
+https://github.com/giangnmt98/DataProcessing.git
+cd DataProcessing
 ```
 
 2. Install the required dependencies:
@@ -52,14 +52,9 @@ make style
 ```bash
 python3 dataprocessor/main.py --config_path <path_to_config_file>
 ````
-### Auto create virtual environment and run the data processor
-```bash
-chmod +x auto_run.sh
-./auto_run.sh --package_name dataprocessor --config_path <path_to_config_file>
-````
 ## Project Directory Structure
 ```
-TemplatePackage/
+DataProcessing/
 ├── dataprocessor/
 │   ├── __init__.py
 │   ├── module1.py

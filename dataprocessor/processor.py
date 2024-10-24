@@ -5,7 +5,7 @@ Module to process CSV data, including reading, filtering, and writing data using
 import cudf
 
 from dataprocessor.config import Config
-from dataprocessor.utils.customlogger import CustomLogger
+from dataprocessor.utils.custom_logger import CustomLogger
 
 logger = CustomLogger(name="Data Processor").get_logger()
 
